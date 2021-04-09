@@ -80,7 +80,6 @@ function createAndUpdateStorage(addressBookData) {
     localStorage.setItem("AddressBookList", JSON.stringify(addressBookList))
 }
 
-/*
 const createAddressbook = () => {
     let addressBookData = new AddressBook();
     try {
@@ -116,7 +115,7 @@ const createAddressbook = () => {
 
     alert(addressBookData.toString());
     return addressBookData;
-}*/
+}
 
 const getInputValueById = (id) => {
     let value = document.getElementById(id).value;
