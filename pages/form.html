@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/form.css">
+    <script defer src="../js/form.js"></script>
+    <script defer src="../js/AddressBookDetails.js"></script>
     <title>Address Book Form</title>
 </head>
 <body>
@@ -20,10 +22,8 @@
     </header>
     <div  id="formId" class="form-content">
         <form class="form" action="#" onreset="resetForm()" onsubmit="save(event)">
-            <div class="cross">
-                <button class="crossButton"><a href="../pages/home.html">X</a></button>
-            </div>
             <div class="form-head"> Person Address Book
+                <button class="cancelButton"><a href="../pages/home.html" style="color:#008cff;">X</a></button>
             </div>
             <div class="row-content">
                 <label class="label text" for="name">Full Name</label>
@@ -31,31 +31,40 @@
                 <error-output class="text-error" for="text"></error-output>
             </div>
             <div class="row-content">
-                <label class="label text" for="name">Phone Number</label>
-                <input class="input" type="text" id="name" name="name" required>
-                <error-output class="text-error" for="text"></error-output>
+                <label class="label text" for="phoneNumber">Phone Number</label>
+                <input class="input" type="text" id="phoneNumber" name="phoneNumber" required>
+                <error-output class="phoneNumber-error" for="text"></error-output>
             </div>
             <div class="row-content">
-                <label class="label text" for="name">Address</label>
-                <input class="input address" type="text" id="name" name="name" required>
-                <error-output class="text-error" for="text"></error-output>
+                <label class="label text" for="address">Address</label>
+                <input class="input address" type="text" id="address" name="address" required>
+                <error-output class="address-error" for="text"></error-output>
             </div>
             <div class="row-content">
                 <div class="select-row">
-                    <label class="label text" for="city">City</label>
+                    <label class="text" for="city">City</label>
                     <select id="city" name="city" required>
+                        <option value="" disabled selected hidden>Select City</option>
                         <option value="Dehradun">Dehradun</option>
                         <option value="Haridwar">Haridwar</option>
-                        <option value="Almora">Almora</option> 
+                        <option value="Almora">Almora</option>
+                        <option value="Pantnagar">Pant Nagar</option>
+                        <option value="Lucknow">Lucknow</option>
+                        <option value="Kanpur">Kanpur</option>
+                        <option value="Shimla">Shimla</option>
                     </select>
-                    <label class="label text" for="state">State</label>
+                    <label class="text" for="state">State</label>
                     <select id="city" name="city" required>
-                        <option value="Dehradun">Dehradun</option>
-                        <option value="Haridwar">Haridwar</option>
-                        <option value="Almora">Almora</option> 
+                        <option value="" disabled selected hidden>Select State</option>
+                        <option value="Uttrakhand">Uttrakhand</option>
+                        <option value="UttarPradesh">UttarPradesh</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Haryana">Haryana</option>
                     </select>
-                    <label class="label text" for="zip">Zip Code</label>
+                    <label class="text" for="zip">Zip Code</label>
                     <input class="input zip" type="text" id="zip" name="zip" required>
+                    <error-output class="zip-error" for="text"></error-output>
                 </div>
             </div>
             <div class="button-content">
