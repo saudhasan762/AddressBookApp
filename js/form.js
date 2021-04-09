@@ -59,3 +59,53 @@ window.addEventListener('DOMContentLoaded', (event) => {
         }
     });
 });
+
+const save = () => {
+    try {
+        let addressBookData = createAddressbook();
+    } catch {
+        return;
+    }
+}
+
+const createAddressbook = () => {
+    let addressBookData = new AddressBook();
+    try {
+        addressBookData.name = getInputValueById('#name');
+    } catch (e) {
+        satTextValue('.text-error', e);
+        throw e;
+    }
+
+    try {
+        addressBookData.phoneNumber = getInputValueById('#phoneNumber');
+    } catch (e) {
+        satTextValue('.phoneNumber-error', e);
+        throw e;
+    }
+
+    try {
+        addressBookData.address = getInputValueById('#address');
+    } catch (e) {
+        satTextValue('.address-error', e);
+        throw e;
+    }
+
+    addressBookData.city = getInputValueById('#city');
+    addressBookData.state = getInputValueById('#state');
+
+    try {
+        addressBookData.zip = getInputValueById('#zip');
+    } catch (e) {
+        satTextValue('.zip-error', e);
+        throw e;
+    }
+
+    alert(addressBookData.toString());
+    return addressBookData;
+}
+
+const getInputValueById = (id) => {
+    let value = document.getElementById(id).value;
+    return value;
+}
