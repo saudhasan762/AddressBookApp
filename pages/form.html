@@ -18,5 +18,20 @@
             </div>
         </div>
     </header>
+    <div  id="formId" class="form-content">
+        <form class="form" action="#" onreset="resetForm()" onsubmit="save(event)">
+            <div class="form-head"> Person Address Book </div>
+            <div class="row-content">
+                <label class="label text" for="name">Full Name</label>
+                <input class="input" type="text" id="name" name="name" required>
+                <error-output class="text-error" for="text"></error-output>
+            </div>
+            <div class="row-content">
+                <label class="label text" for="name">Phone Number</label>
+                <input class="input" type="text" id="name" name="name" required>
+                <error-output class="text-error" for="text"></error-output>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
