@@ -68,6 +68,19 @@ const save = () => {
     }
 }
 
+function createAndUpdateStorage(addressBookData) {
+    let addressBookList = JSON.parse(localStorage.getItem("AddressBookList"));
+
+    if (addressBookList != undefined){
+        addressBookList.push(addressBookData);
+    } else {
+        addressBookList = [addressBookData]
+    }
+    alert(addressBookList.toString());
+    localStorage.setItem("AddressBookList", JSON.stringify(addressBookList))
+}
+
+/*
 const createAddressbook = () => {
     let addressBookData = new AddressBook();
     try {
@@ -103,7 +116,7 @@ const createAddressbook = () => {
 
     alert(addressBookData.toString());
     return addressBookData;
-}
+}*/
 
 const getInputValueById = (id) => {
     let value = document.getElementById(id).value;
